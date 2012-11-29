@@ -350,7 +350,7 @@ void save_dst(const char *path) {
     glFramebufferTexture2DEXT(GL_FRAMEBUFFER_EXT, GL_COLOR_ATTACHMENT0_EXT, GL_TEXTURE_2D, g_tex[TEX_DST], 0);
     glReadPixels(0, 0, g_width, g_height, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
     glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, 0);
-    if (!tga_save(path, pixels, NULL, g_width, g_width, 32)) {
+    if (!tga_save(path, pixels, NULL, g_width, g_height, 32)) {
         cerr << "Saving " << path << " failed!" << endl;
         exit(1);
     }
